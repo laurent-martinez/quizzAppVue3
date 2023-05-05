@@ -45,7 +45,12 @@ watch(search, (val) => {
   .quizes {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-top: 40px;
   }
-  
+  @media screen and (max-width: 800px) {
+    header {
+      flex-direction: column;
+    }
+  }
 </style>
