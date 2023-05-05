@@ -27,6 +27,10 @@ const navigateToQuiz = () => {
     margin-right: 20px;
     cursor: pointer;
   }
+.card:hover {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.5;
+  }
   .card img {
     width: 100%;
     height: 200px;
@@ -35,12 +39,12 @@ const navigateToQuiz = () => {
   }
 
   .card .card-text {
-    padding: 0 5px;
+    padding: 0 10px;
   }
   .card .card-text h2 {
     font-size: 20px;
     font-weight: bold;
     margin: 0;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 </style>

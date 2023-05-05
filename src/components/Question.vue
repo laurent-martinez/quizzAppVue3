@@ -1,5 +1,10 @@
 <script setup>
+import {defineEmits} from 'vue'
+const emit = defineEmits(['selectOption']) 
 const props = defineProps(['question'])
+const emitSelectOption = (isCorrect) => {
+    emit('selectOption', isCorrect)
+}
 </script>
 
 <template>
@@ -8,7 +13,7 @@ const props = defineProps(['question'])
             <h1 class="question">{{props.question.text}} ?</h1>
         </div>
         <div class="options-container">
-            <div v-for="option in props.question.options" :key="option.id" class="option">
+            <div @click="emitSelectOption(option.isCorrect)" v-for="option in props.question.options" :key="option.id" class="option">
                 <p class="option-label">{{option.label}}</p>
                 <div class="option-value">
                     <p>{{option.text}}</p>
@@ -48,6 +53,10 @@ const props = defineProps(['question'])
         border-radius: 5px;
         margin-bottom: 10px;
     }
+    .option:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
     .option-label {
         margin: 0 auto;
         padding: 20px;
@@ -64,8 +73,9 @@ const props = defineProps(['question'])
         border-radius: 0 5px 5px 0;
     }
     .option-value p {
-        margin: 0;
+        margin: 5px;
         font-size: 1.5rem;
         font-weight: 400;
+        white-space: nowrap;
     }
 </style>
