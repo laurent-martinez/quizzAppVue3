@@ -9,5 +9,6 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "files": [ "src/assets/data/quizes.json"]
 }

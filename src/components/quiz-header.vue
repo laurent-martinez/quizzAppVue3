@@ -1,5 +1,5 @@
 <script setup>
-    const props = defineProps(['questionStatus'])
+    const props = defineProps(['questionStatus','barPercentage'])
 </script>
 
 
@@ -8,7 +8,7 @@
         <header>
             <h3>Question {{props.questionStatus}}</h3>
             <div class="bar">
-                <div class="completion"></div>
+                <div class="completion" :style="{width: props.barPercentage}"></div>
             </div>
         </header>
     </div>
@@ -34,6 +34,7 @@ header h3 {
     background-color: #e0e0e0;
     border-radius: 5px;
     margin-top: 10px;
+    border: solid .5px white;
 }
 .frog {
     width: 50px;
@@ -43,7 +44,7 @@ header h3 {
 .completion {
     width: 0%;
     height: 100%;
-    background-color: #4caf50;
+    background-color: #FFC69E;
     border-radius: 5px;
 }
 </style>
