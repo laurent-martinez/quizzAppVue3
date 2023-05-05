@@ -17,6 +17,7 @@ const questionStatus = `${currentQuestion.value}/${quiz.questions.length}`
         <Header :questionStatus="questionStatus"/>
         <div>
             <Question :question="quiz.questions[currentQuestion]" />
+            <button @click="currentQuestion++">Next question</button>
         </div>
     </div>
 </template>
